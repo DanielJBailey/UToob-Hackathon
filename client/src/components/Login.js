@@ -25,6 +25,7 @@ class Login extends React.Component {
                 <h1 className ="signIn">Sign In</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <input 
+                        className ="email"
                         type = "email"
                         required
                         placeholder = "Email"
@@ -34,6 +35,7 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className ="password"
                         type = "password"
                         required
                         placeholder = "Password"
@@ -43,6 +45,7 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className ="login"
                         type="submit"
                         value="Login"
                     />
@@ -72,6 +75,11 @@ const Container = styled.div`
     min-height: 100vh;
     width: 100%;
     padding: 250px;
+
+    .signIn{
+        padding: 10px;
+        font-size: 16px;
+    }
 `;
 
 const Form = styled.form`
@@ -83,6 +91,40 @@ const Form = styled.form`
     
     .forgotPassword {
         font-size: 10px;
+        padding: 10px;
 
+    }
+
+    .login {
+        -webkit-appearance: button;
+        padding: 10px 15px;
+        height: 25px;
+        background-color: #E02038;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #e74b5e;
+        }
+        &:first-child {
+            margin-right: 15px;
+            padding: 0 20px;
+        }
+    }
+
+    .email, .password {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
 `;
