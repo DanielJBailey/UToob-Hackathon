@@ -7,7 +7,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    comment = Commnet.new(comment_params)
+    comment = Comment.new(comment_params)
     comment.user_id = params[:user_id]
     if comment.save
       render json: comment
@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destory
+    @comment.destroy
   end
 
 

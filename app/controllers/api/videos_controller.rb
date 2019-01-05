@@ -11,7 +11,6 @@ class Api::VideosController < ApplicationController
   end
 
   def create
-    binding.pry
     video = Video.new(video_params)
     video.user_id = params[:user_id]
     if video.save
