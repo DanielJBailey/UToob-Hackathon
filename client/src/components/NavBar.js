@@ -22,8 +22,8 @@ const NavBar = ({auth: {user, handleLogout, }, history}) => {
                             </>     
                         :
                             <>
-                                <Link to="/login">Login</Link>
-                                <Link to="/register">Register</Link>
+                                <Link to="/login"><button className="login">Login</button></Link>
+                                <Link to="/register"><button className="register">Register</button></Link>
                             </>
                         }
                     </RightItems>
@@ -81,6 +81,28 @@ const RightItems = styled.div`
         border-radius: 50%;
         margin-right: 25px;
     }
+
+    .login, .register {
+        -webkit-appearance: button;
+        padding: 10px 15px;
+        height: 35px;
+        background-color: #E02038;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #e74b5e;
+        }
+        &:first-child {
+            margin-right: 15px;
+            padding: 0 20px;
+        }
 
     .logout, .upload {
         -webkit-appearance: button;
