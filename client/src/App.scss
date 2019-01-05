@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +10,9 @@ body {
     height: 100%;
     min-height: 100vh;
     width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+
+    a {
+        text-decoration: none;
+    }
 }

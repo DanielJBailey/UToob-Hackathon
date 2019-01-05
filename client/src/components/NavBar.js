@@ -15,7 +15,11 @@ const NavBar = ({auth: {user, handleLogout, }, history}) => {
                     </LogoContainer>
                     <RightItems>
                         {user ? 
-                            <button onClick={() => handleLogout(history)}>Logout</button>         
+                            <>
+                                <img src={UserLogo} alt="profile-image" className="profile-image"/>
+                                <Link to ="/upload"><button className="upload">Upload Video</button></Link>
+                                <button onClick={() => handleLogout(history)} className="logout">Logout</button>    
+                            </>     
                         :
                             <>
                                 <Link to="/login">Login</Link>
@@ -71,4 +75,33 @@ const RightItems = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    .profile-image {
+        max-width: 35px;
+        border-radius: 50%;
+        margin-right: 25px;
+    }
+
+    .logout, .upload {
+        -webkit-appearance: button;
+        padding: 10px 15px;
+        height: 35px;
+        background-color: #E02038;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #e74b5e;
+        }
+        &:first-child {
+            margin-right: 15px;
+            padding: 0 20px;
+        }
+    }
 `;
