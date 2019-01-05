@@ -1,5 +1,5 @@
-import react from 'react';
-import { Form, } from 'semantic-ui-react';
+import React from 'react';
+import axios from 'axios';
 
 class AddVideo extends React.Component {
     state = { title: "", duration: 0, genre: "", description: "", url: "" };
@@ -9,21 +9,20 @@ class AddVideo extends React.Component {
         this.setState({ [name]: value, });
     }
     
-    handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post(`/api/videos/${this.props.videoId}`, {...this.state, })
-            .then(res => this.props.add(res.data))
-        this.props.toggle();
-    }
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     axios.post(`/api/videos/${this.props.videoId}`, {...this.state, })
+    //         .then(res => this.props.add(res.data))
+    //     this.props.toggle();
+    // }
 
     render() {
         const { title, duration, genre, description, url } = this.state;
 
         return(
             <div>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group width="equal">
-                        <Form.Input
+                <form onSubmit={this.handleSubmit}>
+                        <input
                             name="title"
                             label="Title"
                             placeholder="Title"
@@ -31,17 +30,15 @@ class AddVideo extends React.Component {
                             value={title}
                             onChange={this.handleChange}
                         />
-                        <Form.Input
+                        <input
                             name="duration"
                             label="Duration"
                             placeholder="Duration"
                             required
                             value={duration}
                             onChange={this.handleChange}
-                        />    
-                    </Form.Group>
-                    <Form.Group width="equal">
-                        <Form.Input
+                        /> 
+                        <input
                             name="description"
                             label="Description"
                             placeholder="Description"
@@ -49,7 +46,7 @@ class AddVideo extends React.Component {
                             value={description}
                             onChange={this.handleChange}
                         />
-                        <Form.Input
+                        <input
                             name="url"
                             label="Url"
                             placeholder="Url"
@@ -57,15 +54,14 @@ class AddVideo extends React.Component {
                             value={url}
                             onChange={this.handleChange}
                         />
-                    </Form.Group>
-                <Form.Button color="green">Submit</Form.Button>  
-                </Form>
+                        <button color="green">Submit</button>  
+                </form>
             </div>
         )
     }
 
 }
-<div class="custom-select" style="width:200px;">
+{/* <div class="custom-select" style="width:200px;">
   <select>
     <option value="0">Action</option>
     <option value="1">Comedy</option>
@@ -81,7 +77,7 @@ class AddVideo extends React.Component {
     <option value="11">Toyota</option>
     <option value="12">Volvo</option>
   </select>
-</div>
+</div> */}
 
 {/* <Form.Input 
     name="genre"
