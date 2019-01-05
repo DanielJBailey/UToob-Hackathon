@@ -28,6 +28,7 @@ class Register extends React.Component {
             <Container>
                 <Form onSubmit={this.handleSubmit}>
                     <input 
+                        className = "nickName"
                         type = "nickname"
                         required
                         placeholder = "Username"
@@ -37,6 +38,7 @@ class Register extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className ="email"
                         type = "email"
                         required
                         placeholder = "Email"
@@ -46,6 +48,7 @@ class Register extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className = "password"
                         type = "password"
                         required
                         placeholder = "Password"
@@ -55,6 +58,7 @@ class Register extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className = "passwordConfirm"
                         type = "password"
                         required
                         placeholder = "Password Confirmation"
@@ -63,8 +67,9 @@ class Register extends React.Component {
                         onChange={this.handleChange}
                     />
                     <input 
+                        className="login"
                         type="submit"
-                        value="Login"
+                        value="Sign Up"
                     />
                 </Form>
             </Container>
@@ -98,4 +103,45 @@ const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .nickName, .email, .password, .passwordConfirm {
+        width: 600px;
+        padding: 20px;
+        margin: 5px 0;
+        font-size: 18px;
+        border: none;
+        background-color: #f1f2f6;
+        border-radius: 5px;
+            &::placeholder {
+            color: #a4b0be;
+    }
+        @media (max-width: 425px) {
+            width: 100%;
+        }
+    }
+
+    .login {
+        -webkit-appearance: button;
+        padding: 10px 15px;
+        height: 25px;
+        background-color: #E02038;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #e74b5e;
+        }
+        &:first-child {
+            margin-right: 15px;
+            padding: 0 20px;
+        }
+
+    }
+
 `;

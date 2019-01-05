@@ -76,7 +76,7 @@ const Container = styled.div`
     width: 100%;
     padding: 250px;
 
-    .signIn{
+    .signIn {
         padding: 10px;
         font-size: 16px;
     }
