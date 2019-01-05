@@ -23,7 +23,7 @@ export const addVideo = (userId, video) => {
 export const deleteVideo = (userId, videoId) => {
     return (dispatch) => {
         axios.delete(`/api/users/${userId}/videos/${videoId}`)
-        .then( () => dispatch({ type: DELETE_VIDEO, id }))
+        .then( () => dispatch({ type: DELETE_VIDEO, videoId }))
     }
 }
 
