@@ -3,7 +3,7 @@ import {AuthConsumer} from '../providers/AuthProvider';
 import styled from 'styled-components';
 
 class Register extends React.Component {
-    state = {email: '', password: '', passwordConfirmation: ''}
+    state = {email: '', password: '', passwordConfirmation: '', nickname: ''}
 
     handleChange = ({target: {name, value}}) => {
         this.setState({
@@ -13,19 +13,28 @@ class Register extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const {email, password, passwordConfirmation } = this.state;
+        const {email, password, passwordConfirmation, nickname } = this.state;
         const {auth: {handleRegister, }, history} = this.props;
         if(password === passwordConfirmation) {
-            handleRegister({email, password, passwordConfirmation}, history);
+            handleRegister({email, password, passwordConfirmation, nickname}, history);
         } else {
             alert('Passwords Do Not Match!');
         }
     }
 
     render() {
-        const {email, password, passwordConfirmation} = this.state;
+        const {email, password, passwordConfirmation, nickname} = this.state;
         return(
             <Form onSubmit={this.handleSubmit}>
+                <input 
+                    type = "nickname"
+                    required
+                    placeholder = "Username"
+                    autoComplete = "nickname"
+                    name="nickname"
+                    value={nickname}
+                    onChange={this.handleChange}
+                />
                 <input 
                     type = "email"
                     required
