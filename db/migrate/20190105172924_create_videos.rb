@@ -3,8 +3,9 @@ class CreateVideos < ActiveRecord::Migration[5.2]
     create_table :videos do |t|
       t.string :url
       t.string :title
-      t.integer :likes
-      t.integer :dislikes
+      t.string :description
+      t.string :genre
+      t.string :duration
       t.belongs_to :user, foreign_key: true
 
       t.timestamps

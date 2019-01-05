@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :videos
     end
   end
+
+  resources :videos
 end

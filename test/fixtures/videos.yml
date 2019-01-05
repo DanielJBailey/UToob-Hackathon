@@ -3,13 +3,15 @@
 one:
   url: MyString
   title: MyString
-  likes: 1
-  dislikes: 1
+  description: MyString
+  genre: MyString
+  duration: MyString
   user: one
 
 two:
   url: MyString
   title: MyString
-  likes: 1
-  dislikes: 1
+  description: MyString
+  genre: MyString
+  duration: MyString
   user: two
