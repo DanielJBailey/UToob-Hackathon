@@ -1,4 +1,5 @@
 import axios from 'axios';
+import alert from 'sweetalert2';
 
 const VIDEOS = "VIDEOS";
 const ADD_VIDEO = "ADD_VIDEO";
@@ -14,7 +15,11 @@ export const getVideos = () => {
 }
 
 export const addVideo = (userId, video) => {
-    console.log('made it');
+    alert(
+        'Video Added!',
+        'Your video has been successfully added!',
+        'success'
+    )
     return (dispatch) => {
         axios.post(`/api/users/${userId}/videos`, {video})
         .then(res => dispatch({ type: ADD_VIDEO, video: res.data}))
@@ -22,6 +27,11 @@ export const addVideo = (userId, video) => {
 }
 
 export const deleteVideo = (userId, videoId) => {
+    alert(
+        'Video Deleted!',
+        'Your video has been successfully removed!',
+        'success'
+    )
     return (dispatch) => {
         axios.delete(`/api/users/${userId}/videos/${videoId}`)
         .then( () => dispatch({ type: DELETE_VIDEO, videoId }))

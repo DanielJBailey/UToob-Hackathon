@@ -51,8 +51,11 @@ export default withRouter(ConnectedNavBar);
 const Navigation = styled.div`
     width: 100%;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    z-index: 999;
 `;
 
 const Container = styled.div`
