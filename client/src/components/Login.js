@@ -20,30 +20,32 @@ class Login extends React.Component {
     render() {
         const {email, password} = this.state;
         return(
-            <Form onSubmit={this.handleSubmit}>
-                <input 
-                    type = "email"
-                    required
-                    placeholder = "Email"
-                    autoComplete = "email"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type = "password"
-                    required
-                    placeholder = "Password"
-                    autoComplete = "password"
-                    name="password"
-                    value={password}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type="submit"
-                    value="Login"
-                />
-            </Form>
+            <Container>
+                <Form onSubmit={this.handleSubmit}>
+                    <input 
+                        type = "email"
+                        required
+                        placeholder = "Email"
+                        autoComplete = "email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type = "password"
+                        required
+                        placeholder = "Password"
+                        autoComplete = "password"
+                        name="password"
+                        value={password}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type="submit"
+                        value="Login"
+                    />
+                </Form>
+            </Container>
         )
     }
 }
@@ -58,6 +60,15 @@ export default class ConnectedLogin extends React.Component {
     }
 }
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+`;
 
 const Form = styled.form`
     display: flex;

@@ -25,47 +25,49 @@ class Register extends React.Component {
     render() {
         const {email, password, passwordConfirmation, nickname} = this.state;
         return(
-            <Form onSubmit={this.handleSubmit}>
-                <input 
-                    type = "nickname"
-                    required
-                    placeholder = "Username"
-                    autoComplete = "nickname"
-                    name="nickname"
-                    value={nickname}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type = "email"
-                    required
-                    placeholder = "Email"
-                    autoComplete = "email"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type = "password"
-                    required
-                    placeholder = "Password"
-                    autoComplete = "password"
-                    name="password"
-                    value={password}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type = "password"
-                    required
-                    placeholder = "Password Confirmation"
-                    name="passwordConfirmation"
-                    value={passwordConfirmation}
-                    onChange={this.handleChange}
-                />
-                <input 
-                    type="submit"
-                    value="Login"
-                />
-            </Form>
+            <Container>
+                <Form onSubmit={this.handleSubmit}>
+                    <input 
+                        type = "nickname"
+                        required
+                        placeholder = "Username"
+                        autoComplete = "nickname"
+                        name="nickname"
+                        value={nickname}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type = "email"
+                        required
+                        placeholder = "Email"
+                        autoComplete = "email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type = "password"
+                        required
+                        placeholder = "Password"
+                        autoComplete = "password"
+                        name="password"
+                        value={password}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type = "password"
+                        required
+                        placeholder = "Password Confirmation"
+                        name="passwordConfirmation"
+                        value={passwordConfirmation}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        type="submit"
+                        value="Login"
+                    />
+                </Form>
+            </Container>
         )
     }
 }
@@ -79,6 +81,16 @@ export default class ConnectedRegister extends React.Component {
         )
     }
 }
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+`;
 
 
 const Form = styled.form`
