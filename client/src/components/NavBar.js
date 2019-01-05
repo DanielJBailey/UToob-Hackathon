@@ -103,6 +103,7 @@ const RightItems = styled.div`
             margin-right: 15px;
             padding: 0 20px;
         }
+    }
 
     .logout, .upload {
         -webkit-appearance: button;

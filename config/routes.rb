@@ -3,12 +3,18 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users do
-      resources :videos
+      resources :videos 
     end
   end
 
   namespace :api do
-      resources :videos
+    resources :videos do
+      resources :comments
+    end
+  end
+
+  namespace :api do
+    resources :comments
   end
   
 end
