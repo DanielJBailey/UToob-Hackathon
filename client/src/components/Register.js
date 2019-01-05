@@ -122,8 +122,9 @@ const Form = styled.form`
 
     .login {
         -webkit-appearance: button;
+        width: 100%;
         padding: 10px 15px;
-        height: 25px;
+        height: 35px;
         background-color: #E02038;
         cursor: pointer;
         border: none;

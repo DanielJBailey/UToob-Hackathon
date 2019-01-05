@@ -77,6 +77,7 @@ const Container = styled.div`
     padding: 250px;
 
     .signIn {
+
         padding: 10px;
         font-size: 16px;
     }
@@ -97,6 +98,7 @@ const Form = styled.form`
 
     .login {
         -webkit-appearance: button;
+        width: 100%;
         padding: 10px 15px;
         height: 25px;
         background-color: #E02038;
