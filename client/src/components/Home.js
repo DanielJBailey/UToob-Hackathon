@@ -1,13 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
+import {getVideos} from '../reducers/videos';
 
-const Home = () => (
-    <HomeContainer>
-        <h1>Home</h1>
-    </HomeContainer>  
-)
+class Home extends React.Component {
+    state = {
+        videos: []
+    }
 
-export default Home;
+    componentDidMount() {
+        const {dispatch} = this.props;
+        dispatch(getVideos());
+    }
+
+    render() {
+        return(
+            <HomeContainer>
+                <h1>Home</h1>
+            </HomeContainer>
+        )
+    }
+}
 
 const HomeContainer = styled.div`
     height: 100%;
@@ -18,3 +31,11 @@ const HomeContainer = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
+
+const mapStateToProps = (state) => {
+    return { videos: state.videos, };
+}
+
+export default connect(mapStateToProps)(Home);
+

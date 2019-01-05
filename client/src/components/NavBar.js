@@ -16,7 +16,7 @@ const NavBar = ({auth: {user, handleLogout, }, history}) => {
                     <RightItems>
                         {user ? 
                             <>
-                                <img src={UserLogo} alt="profile-image" className="profile-image"/>
+                                <img src={UserLogo} alt="profile-pic" className="profile-image"/>
                                 <Link to ="/upload"><button className="upload">Upload Video</button></Link>
                                 <button onClick={() => handleLogout(history)} className="logout">Logout</button>    
                             </>     

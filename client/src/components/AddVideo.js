@@ -1,9 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-// import axios from 'axios';
+import {connect} from 'react-redux';
+import {AuthConsumer} from '../providers/AuthProvider';
+import { addVideo } from '../reducers/videos'
 
 class AddVideo extends React.Component {
-  state = { title: "", duration: "", genre: "", description: "", url: "" };
+  state = { 
+    title: "", 
+    duration: "", 
+    genre: "", 
+    description: "", 
+    url: ""
+  };
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -12,14 +20,25 @@ class AddVideo extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const video = {...this.state};
+    const {dispatch} = this.props;
+    const {id} = this.props.auth.user;
+    dispatch(addVideo(id, video));
+    this.setState({
+      title: "", 
+      duration: "", 
+      genre: "", 
+      description: "", 
+      url: ""
+    })
   };
 
   render() {
     const { title, duration, genre, description, url } = this.state;
 
     return (
-      <Container>
-        <Form>
+      <Container> 
+        <Form onSubmit={this.handleSubmit}>
           <select value={genre} onChange={this.handleChange} name="genre">
             <option value="">Genre</option>
             <option value="Action">Action</option>
@@ -120,13 +139,17 @@ const Form = styled.form`
     }
   }
 `;
-/* <input 
-        name="genre"
-        label="Genre"
-        placeholder="Genre"
-        required
-        value={genre}
-        onChange={this.handleChange}
-    /> */
 
-export default AddVideo;
+export class ConnectedAddVideo extends React.Component {
+  render() {
+    return (
+      <AuthConsumer> 
+        { auth => 
+          <AddVideo { ...this.props } auth={auth} />
+        }
+      </AuthConsumer>
+    )
+  }
+} 
+
+export default connect()(ConnectedAddVideo);

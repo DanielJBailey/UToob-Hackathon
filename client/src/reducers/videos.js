@@ -14,6 +14,7 @@ export const getVideos = () => {
 }
 
 export const addVideo = (userId, video) => {
+    console.log('made it');
     return (dispatch) => {
         axios.post(`/api/users/${userId}/videos`, {video})
         .then(res => dispatch({ type: ADD_VIDEO, video: res.data}))

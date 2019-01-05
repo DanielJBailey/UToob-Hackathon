@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :videos
+  namespace :api do
+      resources :videos
+  end
   
 end
