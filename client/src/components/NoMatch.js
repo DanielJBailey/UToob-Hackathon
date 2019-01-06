@@ -4,15 +4,15 @@ import styled from 'styled-components';
 const NoMatch = () => (
     <ErrorContainer>
         <div class="mars"></div>
-        `    <img src="https://mars-404.templateku.co/img/404.svg" class="logo-404" />
-        <img src="https://mars-404.templateku.co/img/meteor.svg" class="meteor" />
+        `    <img src="https://mars-404.templateku.co/img/404.svg" class="logo-404" alt=""/>
+        <img src="https://mars-404.templateku.co/img/meteor.svg" class="meteor" alt=""/>
         <p class="title" >FAIL!</p>
         <p class="subtitle">Way to suck<br/> (just click the icon) </p>
         <div align="center">
-            <a class="btn-back" href="#">Back to previous page</a>
+            <a class="btn-back" href="/">Back to previous page</a>
         </div>
-        <img src="https://mars-404.templateku.co/img/astronaut.svg" class="astronaut" />
-        <img src="https://mars-404.templateku.co/img/spaceship.svg" class="spaceship" />
+        <img src="https://mars-404.templateku.co/img/astronaut.svg" class="astronaut"  alt=""/>
+        <img src="https://mars-404.templateku.co/img/spaceship.svg" class="spaceship"  alt=""/>
     </ErrorContainer>
 )
 

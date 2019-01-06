@@ -110,7 +110,7 @@ const Form = styled.form`
         margin: 5px 0;
         font-size: 18px;
         border: none;
-        background-color: #f1f2f6;
+        background-color: #FFF;
         border-radius: 5px;
             &::placeholder {
             color: #a4b0be;
@@ -122,9 +122,10 @@ const Form = styled.form`
 
     .login {
         -webkit-appearance: button;
+        margin-top: 5px;
         width: 100%;
         padding: 10px 15px;
-        height: 35px;
+        height: 60px;
         background-color: #E02038;
         cursor: pointer;
         border: none;

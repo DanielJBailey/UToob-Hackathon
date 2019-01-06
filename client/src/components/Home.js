@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
 import { connect } from "react-redux";
 import { getVideos } from "../reducers/videos";
 // import Iframe from "react-iframe";
@@ -31,14 +32,15 @@ class Home extends React.Component {
     }
     if (videos.length > 0) {
       firstVideo = {
+        id: videos[0].id,
         url: videos[0].url,
         title: videos[0].title,
         description: videos[0].description,
         genre: videos[0].description,
         duration: videos[0].description
       };
-      sideBarVids = videos.slice(1, 4);
-      remainingVids = videos.slice(4, videos.length);
+      sideBarVids = videos.slice(1, 5);
+      remainingVids = videos.slice(5, videos.length);
     }
 
     return (
@@ -49,13 +51,13 @@ class Home extends React.Component {
             <>
               <FirstVideo>
                 <YouTube videoId={firstVideo.url} className="first-video" />
-                <h3 className="video-title">{firstVideo.title}</h3>
+                <Link to={`/videos/${firstVideo.id}`}><h3 className="video-title">{firstVideo.title}</h3></Link>
               </FirstVideo>
               <SideBarVids>
                 {sideBarVids.map(video => (
                   <Video key={video.id}>
                     <YouTube videoId={video.url} className="video" />
-                    <p>{video.title}</p>
+                    <Link to={`/videos/${video.id}`}><p>{video.title}</p></Link>
                   </Video>
                 ))}
               </SideBarVids>
@@ -68,7 +70,7 @@ class Home extends React.Component {
               {remainingVids.map(video => (
                 <BodyVideo key={video.id}>
                   <YouTube videoId={video.url} className="video" />
-                  <p>{video.title}</p>
+                  <Link to={`/videos/${video.id}`}><p>{video.title}</p></Link>
                 </BodyVideo>
               ))}
             </>
@@ -112,6 +114,7 @@ const BodyVideo = styled.div`
   .video {
     width: 100%;
     height: 100%;
+    max-height: 175px;
   }
 
   p {

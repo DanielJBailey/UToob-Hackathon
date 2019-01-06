@@ -108,7 +108,7 @@ const Form = styled.form`
     margin: 5px 0;
     font-size: 18px;
     border: none;
-    background-color: #f1f2f6;
+    background-color: #fff;
     border-radius: 5px;
     &::placeholder {
       color: #a4b0be;
@@ -120,7 +120,7 @@ const Form = styled.form`
   select {
     align-self: flex-start;
     font-size: 18px;
-    background-color: #f1f2f6;
+    background-color: #fff;
     border: none;
     height: 40px;
     margin: 5px 0;
